@@ -15,9 +15,7 @@ LABEL io.k8s.description="Platform for building Experience Sampler Data Collecto
 
 # TODO: Install required packages here:
 # RUN yum install -y ... && yum clean all -y
-#RUN yum install -y rubygems && yum clean all -y
-#RUN gem install asdf
-RUN yum install -y httpd && yum clean all -y
+#RUN yum install -y httpd && yum clean all -y
 
 # TODO (optional): Copy the builder files into /opt/app-root
 COPY ./<builder_folder>/ /opt/app-root/
