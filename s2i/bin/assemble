@@ -25,4 +25,4 @@ echo "---> Installing application source..."
 cp -Rf /tmp/src/. ./
 
 echo "---> Building application from source..."
-cp /opt/app-root/src/data_collector.cgi /opt/rh/httpd24/root/var/www/cgi-bin/
+sed -i s#/opt/rh/httpd24/root/var/www/cgi-bin#/opt/app-root/src/cgi-bin#g /etc/httpd/conf/httpd.conf 
