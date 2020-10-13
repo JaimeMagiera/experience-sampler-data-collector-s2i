@@ -22,8 +22,7 @@ fi
 #fi
 
 echo "---> Installing application source..."
-#cp -Rf /tmp/src/. ./
-cp -Rf /tmp/src/data_collector.cgi /var/www/cgi-bin/
+cp -Rf /tmp/src/. ./
 
 echo "---> Building application from source..."
 # TODO: Add build steps for your application, eg npm install, bundle install, pip install, etc.
