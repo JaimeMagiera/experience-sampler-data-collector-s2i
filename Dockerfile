@@ -12,5 +12,5 @@ COPY ./<builder_folder>/ /opt/app-root/
 COPY ./s2i/bin/ /usr/libexec/s2i
 RUN chown -R 1001:1001 /opt/app-root
 USER 1001
-RUN sed -i s#/opt/rh/httpd24/root/var/www/cgi-bin#/opt/app-root/src/cgi-bin#g /etc/httpd/conf/httpd.conf
+RUN sed -i 's#/opt/rh/httpd24/root/var/www/cgi-bin#/opt/app-root/src/cgi-bin#g' /etc/httpd/conf/httpd.conf
 CMD ["/usr/libexec/s2i/usage"]
