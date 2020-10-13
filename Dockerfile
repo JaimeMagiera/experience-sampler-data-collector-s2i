@@ -14,7 +14,6 @@ LABEL io.k8s.description="Platform for building Experience Sampler Data Collecto
       io.openshift.tags="builder,Experience Sampler Data Collector,etc."
 
 # TODO: Install required packages here:
-# RUN yum install -y ... && yum clean all -y
 #RUN yum install -y httpd && yum clean all -y
 
 # TODO (optional): Copy the builder files into /opt/app-root
