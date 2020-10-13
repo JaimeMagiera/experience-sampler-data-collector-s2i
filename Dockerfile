@@ -1,5 +1,6 @@
 # experience-sampler-data-collector-builder
-FROM openshift/base-centos7
+#FROM openshift/base-centos7
+FROM registry.redhat.io/rhel8/httpd-24
 
 LABEL maintainer="Jaime Magiera <jaimelm@umich.edu>"
 
