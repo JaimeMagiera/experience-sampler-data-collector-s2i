@@ -13,7 +13,7 @@ foreach $pair (@pairs)
     $FORM{$name} = $value; 
 } 
 
-my $id = $FORM('participant_id');
+my $id = $FORM{'participant_id'};
 print "Content-type:text/html\r\n\r\n"; 
 print "<html>"; 
 print "<head>"; 
@@ -29,7 +29,7 @@ my $filename = "participant_".$id."_data.csv";
 my $filepath = $datadir . "/" . $filename;
 open( OUTFILE, ">>", $filepath) or die $!, "Couldn\'t open outfile for writing!\n";
 
-/*
+=pod
 my @keys = $query->param();
 print OUTFILE 'pause_time'."\t".$query->param('pause_time')."\n";
 foreach my $key (@keys) {
@@ -39,7 +39,7 @@ foreach my $key (@keys) {
 		print OUTFILE "\n";
     }
 }
-*/
+=cut
 close( OUTFILE );
 
 1;
