@@ -1,5 +1,5 @@
 #!/usr/bin/perl -ws                                                                       
-use CGI;
+#use CGI;
 
 my $datadir =  $ENV{'DATA_DIR'};
 my $query = CGI->new;
