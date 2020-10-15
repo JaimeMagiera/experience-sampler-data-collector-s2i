@@ -25,5 +25,4 @@ echo "---> Installing application source..."
 cp -Rf /tmp/src/. ./
 
 echo "---> Building application from source..."
-cp /etc/httpd/conf/httpd.conf /tmp/taco.conf
-sed -i 's#/opt/rh/httpd24/root/var/www/cgi-bin#/opt/app-root/src/cgi-bin#g' /tmp/taco.conf 
+yum install -y perl-CGI
