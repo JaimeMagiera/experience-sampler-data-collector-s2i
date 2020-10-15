@@ -22,7 +22,7 @@ print "</head>";
 print "<body>"; 
 print "You are participant $id!";
 print "</body>"; 
-print "</html>"
+print "</html>";
 
 # Create outfile for saving data!
 # my $filename = "participant_${id}_data.csv";
