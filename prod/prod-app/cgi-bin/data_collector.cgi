@@ -18,7 +18,7 @@ my $id = $FORM{'participant_id'};
 print "Content-type:text/html\r\n\r\n"; 
 print "<html>"; 
 print "<head>"; 
-print "<title>GeeksForGeeks - Get Method</title>"; 
+print "<title>Experience Sampler</title>"; 
 print "</head>"; 
 print "<body>"; 
 foreach (sort keys %ENV) { 
