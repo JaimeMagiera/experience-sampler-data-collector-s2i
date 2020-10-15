@@ -24,22 +24,21 @@ print "You are participant $id!";
 print "</body>"; 
 print "</html>";
 
-# Create outfile for saving data!
-# my $filename = "participant_${id}_data.csv";
-#my $filepath = $datadir . "/" . $filename;
-#open( OUTFILE, ">>", $filepath) or die $!, "Couldn\'t open outfile for writing!\n";
-#
-#my @keys = $query->param();
-#print OUTFILE 'pause_time'."\t".$query->param('pause_time')."\n";
-#foreach my $key (@keys) {
-#    if (($key ne 'participant_id') && ($key ne 'pause_time')) {
-#		print OUTFILE $key."\t";
-#
-#print OUTFILE $query->param($key);
-#		print OUTFILE "\n";
-#    }
-#}
-#=cut
-#close( OUTFILE );
+# Create outfile for saving data
+my $filename = "participant_${id}_data.csv";
+my $filepath = $datadir . "/" . $filename;
+open( OUTFILE, ">>", $filepath) or die $!, "Couldn\'t open outfile for writing!\n";
+print OUTFILE "pause_time\t$FORM{'pause_time'}\n";
+
+foreach $key (keys %FORM)
+{
+	if (($key ne 'participant_id') && ($key ne 'pause_time')) {
+               print OUTFILE "${key}\t";
+	       print OUTFILE "$FORM{$key}";
+	       print OUTFILE "\n";
+       }       
+}
+
+close( OUTFILE );
 
 1;
