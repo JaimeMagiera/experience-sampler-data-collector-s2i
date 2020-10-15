@@ -14,16 +14,15 @@ foreach $pair (@pairs)
 } 
 
 my $id = $FORM('participant_id');
-
-print "Content-type: text/html\n\n";
-print "HTTP Header: \n";
-print "\n";
-
-for (sort(keys(%ENV))) {
- print "$_ = $ENV{$_}<br>\n";
-}
-
+print "Content-type:text/html\r\n\r\n"; 
+print "<html>"; 
+print "<head>"; 
+print "<title>GeeksForGeeks - Get Method</title>"; 
+print "</head>"; 
+print "<body>"; 
 print "You are participant $id!";
+print "</body>"; 
+print "</html>"
 
 # Create outfile for saving data!
 my $filename = "participant_".$id."_data.csv";
