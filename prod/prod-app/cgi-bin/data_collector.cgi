@@ -10,7 +10,7 @@ print "You are participant $id!";
 
 # Create outfile for saving data!
 my $filename = "participant_".$id."_data.csv";
-my $filepath = $datadir . "/" . $filename
+my $filepath = $datadir . "/" . $filename;
 open( OUTFILE, ">>", $filepath) or die $!, "Couldn\'t open outfile for writing!\n";
 
 my @keys = $query->param();
