@@ -8,9 +8,9 @@ LABEL io.k8s.description="Platform for building the Experience Sampler Data Coll
       io.openshift.expose-services="8080:http" \
       io.openshift.tags="builder,Experience Sampler, Data Collector"
 
+RUN yum install -y perl-CGI 
 COPY ./<builder_folder>/ /opt/app-root/
 COPY ./s2i/bin/ /usr/libexec/s2i
 RUN chown -R 1001:1001 /opt/app-root
 USER 1001
-RUN yum install perl-CGI -y && clean all -y
 CMD ["/usr/libexec/s2i/usage"]
