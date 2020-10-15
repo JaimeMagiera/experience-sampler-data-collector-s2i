@@ -2,6 +2,7 @@
 
 my $datadir =  $ENV{'DATA_DIR'};
 $buffer = $ENV{'QUERY_STRING'}; 
+
 #split information into key/value pairs 
 @pairs = split(/&/, $buffer); 
 foreach $pair (@pairs)  
@@ -20,7 +21,11 @@ print "<head>";
 print "<title>GeeksForGeeks - Get Method</title>"; 
 print "</head>"; 
 print "<body>"; 
+foreach (sort keys %ENV) { 
+  print "$_  =  $ENV{$_}\n"; 
+}
 print "You are participant $id!";
+print "datadir $datadir";
 print "</body>"; 
 print "</html>";
 
