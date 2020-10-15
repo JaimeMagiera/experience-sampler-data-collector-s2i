@@ -1,11 +1,28 @@
 #!/usr/bin/perl -ws                                                                       
-#use CGI;
 
 my $datadir =  $ENV{'DATA_DIR'};
-my $query = CGI->new;
-my $id = $query->param( 'participant_id' );
+$buffer = $ENV{'QUERY_STRING'}; 
+#split information into key/value pairs 
+@pairs = split(/&/, $buffer); 
+foreach $pair (@pairs)  
+{ 
+    ($name, $value) = split(/=/, $pair); 
+    $value =~ tr/+/ /; 
+    $value =~ s/%([a-fA-F0-9] [a-fA-F0-9])/pack("C", hex($1))/eg; 
+    $value =~ s/~!/ ~!/g; 
+    $FORM{$name} = $value; 
+} 
 
-print $query->header;
+my $id = $FORM('participant_id');
+
+print "Content-type: text/html\n\n";
+print "HTTP Header: \n";
+print "\n";
+
+for (sort(keys(%ENV))) {
+ print "$_ = $ENV{$_}<br>\n";
+}
+
 print "You are participant $id!";
 
 # Create outfile for saving data!
@@ -13,6 +30,7 @@ my $filename = "participant_".$id."_data.csv";
 my $filepath = $datadir . "/" . $filename;
 open( OUTFILE, ">>", $filepath) or die $!, "Couldn\'t open outfile for writing!\n";
 
+/*
 my @keys = $query->param();
 print OUTFILE 'pause_time'."\t".$query->param('pause_time')."\n";
 foreach my $key (@keys) {
@@ -22,6 +40,7 @@ foreach my $key (@keys) {
 		print OUTFILE "\n";
     }
 }
+*/
 close( OUTFILE );
 
 1;
