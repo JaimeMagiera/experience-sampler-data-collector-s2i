@@ -21,7 +21,7 @@ print "<head>";
 print "<title>Experience Sampler</title>"; 
 print "</head>"; 
 print "<body>"; 
-print "You are participant $id!";
+print "Thank you. You are participant $id.";
 print "</body>"; 
 print "</html>";
 
