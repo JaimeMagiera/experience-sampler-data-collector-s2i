@@ -21,11 +21,7 @@ print "<head>";
 print "<title>Experience Sampler</title>"; 
 print "</head>"; 
 print "<body>"; 
-foreach (sort keys %ENV) { 
-  print "$_  =  $ENV{$_}\n"; 
-}
 print "You are participant $id!";
-print "datadir $datadir";
 print "</body>"; 
 print "</html>";
 
