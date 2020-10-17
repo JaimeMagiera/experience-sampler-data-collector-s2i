@@ -21,8 +21,9 @@ if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
   shopt -u dotglob
 fi
 
+# Install the application soure into the final image.
 echo "---> Installing application source..."
 cp -Rf /tmp/src/. ./
 
-echo "---> Building application from source..."
 # Any further building would be added here.
+echo "---> Building application from source..."
