@@ -12,17 +12,17 @@ if [[ "$1" == "-h" ]]; then
 	exec /usr/libexec/s2i/usage
 fi
 
-# Restore artifacts from the previous build (if they exist).
-#
-#if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
-#  echo "---> Restoring build artifacts..."
-#  shopt -s dotglob
-#  mv /tmp/artifacts/* ./
-#  shopt -u dotglob
-#fi
+ Restore artifacts from the previous build (if they exist).
+
+if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
+  echo "---> Restoring build artifacts..."
+  shopt -s dotglob
+  mv /tmp/artifacts/* ./
+  shopt -u dotglob
+fi
 
 echo "---> Installing application source..."
 cp -Rf /tmp/src/. ./
 
 echo "---> Building application from source..."
-yum install -y perl-CGI
+# Any further building would be added here.
