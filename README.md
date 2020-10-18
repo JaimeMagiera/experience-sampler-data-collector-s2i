@@ -7,4 +7,4 @@ There are two ways to build the container in Openshift:
 
 * Web Console: Create a new project in the web console. Under the **Workloads** tab of the project, create a new item of type **Git Repository**
 
-* Command Line: 
+* Command Line: Using the oc 
