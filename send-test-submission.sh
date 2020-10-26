@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Get command line options
 while getopts ":s:h" opt; do
