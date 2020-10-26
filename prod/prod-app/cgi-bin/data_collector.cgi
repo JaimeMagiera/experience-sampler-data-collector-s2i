@@ -4,11 +4,19 @@
 # Read the DATA_DIR environment variable to construct the path for data files to be written to.
 $datadir =  $ENV{'DATA_DIR'};
 
-# Read the QUERY_STRING environment variable into a buffer for parsing.
-$buffer = $ENV{'QUERY_STRING'}; 
+# Get the request method.
+$request_method = $ENV{'REQUEST_METHOD'};
+
+# Read the data into a buffer for parsing, accounting for both GET and POST request methods.
+if ($request_method eq "GET") {
+          $form_info = $ENV{'QUERY_STRING'};
+} else {
+      $size_of_form_information = $ENV{'CONTENT_LENGTH'};
+      read (STDIN, $form_info, $size_of_form_information);
+}
 
 # Parse the query string into key/value pairs 
-@pairs = split(/&/, $buffer); 
+@pairs = split(/&/, $form_info); 
 foreach $pair (@pairs)  
 { 
     ($name, $value) = split(/=/, $pair); 
