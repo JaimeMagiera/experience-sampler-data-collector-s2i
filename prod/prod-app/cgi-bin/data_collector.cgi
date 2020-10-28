@@ -38,7 +38,7 @@ $response_content .= "</head>\n\n";
 $response_content .= "<body>\n\n";
 $response_content .= "Thank you. You are participant $id.\n\n";
 $response_content .= "</body>\n\n";
-$response_content .= "</html\n>\n";
+$response_content .= "</html>\n\n";
 
 # Output the headers.
 print "Content-type: text/html", "\n\n";
