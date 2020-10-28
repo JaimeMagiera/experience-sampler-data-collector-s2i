@@ -30,18 +30,19 @@ foreach $pair (@pairs)
 $id = $FORM{'participant_id'};
 
 # Generate an HTML reponse to the submission. 
-
 $response_content = "<html>";
-$response_content .= "<head>";
+$response_content .= "<header>";
 $response_content .= "<title>Experience Sampler</title>";
-$response_content .= "</head>";
+$response_content .= "</header>";
 $response_content .= "<body>";
 $response_content .= "Thank you. You are participant $id.";
 $response_content .= "</body>";
 $response_content .= "</html>";
 
-#print "HTTP/1.0 200 OK", "\n\n";
+# Output the headers.
 print "Content-type: text/html", "\n\n";
+
+# Output the response content.
 print $response_content;
 
 
