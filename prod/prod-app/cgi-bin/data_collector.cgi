@@ -40,7 +40,7 @@ $response_content .= "Thank you. You are participant $id.";
 $response_content .= "</body>";
 $response_content .= "</html>";
 
-print "HTTP/1.0 200 OK", "\n\n";
+#print "HTTP/1.0 200 OK", "\n\n";
 print "Content-type: text/html", "\n\n";
 print $response_content;
 
