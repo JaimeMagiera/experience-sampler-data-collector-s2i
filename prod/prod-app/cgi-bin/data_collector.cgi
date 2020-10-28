@@ -30,8 +30,8 @@ foreach $pair (@pairs)
 $id = $FORM{'participant_id'};
 
 # Generate an HTML reponse to the submission. 
-#print "HTTP/1.0 200 OK\r\n\r\n";
-print "Content-type:text/html\r\n\r\n";
+print "HTTP/1.0 200 OK";
+print "Content-type:text/html";
 print "<html>"; 
 print "<head>"; 
 print "<title>Experience Sampler</title>"; 
