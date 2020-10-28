@@ -41,6 +41,7 @@ $response_content .= "</body>\n\n";
 $response_content .= "</html>\n\n";
 
 # Output the headers.
+print "Access-Control-Allow-Origin: *", "\n\n";
 print "Content-type: text/html", "\n\n";
 
 # Output the response content.
