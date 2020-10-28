@@ -32,7 +32,6 @@ $id = $FORM{'participant_id'};
 # Generate an HTML reponse to the submission. 
 print "HTTP/1.1 200 OK";
 print "Content-type:text/html\r\n\r\n";
-print "Access-Control-Allow-Origin: *";
 print "<html>"; 
 print "<head>"; 
 print "<title>Experience Sampler</title>"; 
