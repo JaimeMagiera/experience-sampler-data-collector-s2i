@@ -1,4 +1,5 @@
-#!/usr/bin/perl -ws                                                                       
+#!/usr/bin/perl -ws
+require HTTP::Headers;
 # This cgi script parses the submission.
 
 # Read the DATA_DIR environment variable to construct the path for data files to be written to.
