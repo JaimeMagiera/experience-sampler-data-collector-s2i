@@ -32,9 +32,9 @@ $id = $FORM{'participant_id'};
 # Generate an HTML reponse to the submission. 
 $response_content = "<!DOCTYPE html>\n\n";
 $response_content .= "<html>\n\n";
-$response_content .= "<head>\n\n";
-$response_content .= "<title>Experience Sampler</title>\n\n";
-$response_content .= "</head>\n\n";
+#$response_content .= "<head>\n\n";
+#$response_content .= "<title>Experience Sampler</title>\n\n";
+#$response_content .= "</head>\n\n";
 $response_content .= "<body>\n\n";
 $response_content .= "Thank you. You are participant $id.\n\n";
 $response_content .= "</body>\n\n";
