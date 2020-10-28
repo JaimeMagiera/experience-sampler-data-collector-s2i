@@ -31,14 +31,14 @@ $id = $FORM{'participant_id'};
 
 # Generate an HTML reponse to the submission. 
 
-$response_content = "<html>";
-$response_content .= "<head>"
-$response_content .= "<title>Experience Sampler</title>";
-$response_content .= "</head>";
-$response_content .= "<body>";
-$response_content .= "Thank you. You are participant $id.";
-$response_content .= "</body>";
-$response_content .= "</html>";
+$response_content = "<html><body>test</body</html>";
+#$response_content .= "<head>"
+#$response_content .= "<title>Experience Sampler</title>";
+#$response_content .= "</head>";
+#$response_content .= "<body>";
+#$response_content .= "Thank you. You are participant $id.";
+#$response_content .= "</body>";
+#$response_content .= "</html>";
 
 print "HTTP/1.0 200 OK", "\n\n";
 print "Content-type: text/html", "\n\n";
