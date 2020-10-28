@@ -31,7 +31,7 @@ $id = $FORM{'participant_id'};
 
 # Generate an HTML reponse to the submission. 
 $response_content = "<!DOCTYPE html>\n\n";
-$response_content .= "<html\n>\n";
+$response_content .= "<html>\n\n";
 $response_content .= "<head>\n\n";
 $response_content .= "<title>Experience Sampler</title>\n\n";
 $response_content .= "</head>\n\n";
