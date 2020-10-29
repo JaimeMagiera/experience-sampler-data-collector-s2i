@@ -18,4 +18,10 @@ There are two ways to build the container in OKD/Openshift:
  
 For more information on bulding and running applications in OKD/OpenShift, see the [OKD documentation](https://docs.okd.io/latest/applications/application_life_cycle_management/creating-applications-using-cli.html)
 
-There is also a bash script to test data submission.
+## Utilities ##
+This repository also contains several utilities that you can use to test your data collector.  
+
+**test-data-collector.sh** This shell script simulates a survey submission to your data collector. Use the **-s** flag to provide the URL.
+
+**test-data-collector.html** is  webpage with embedded javascript that simulates a survey submission. Enter the data collector URL in the form.
+
