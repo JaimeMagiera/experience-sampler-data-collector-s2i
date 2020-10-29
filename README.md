@@ -21,7 +21,7 @@ For more information on bulding and running applications in OKD/OpenShift, see t
 ## Utilities ##
 This repository also contains several utilities that you can use to test your data collector.  
 
-**test-data-collector.sh** This shell script simulates a survey submission to your data collector. Use the **-s** flag to provide the URL.
+**test-data-collector.sh**[test-data-collector.html] This shell script simulates a survey submission to your data collector. Use the **-s** flag to provide the URL.
 
 **test-data-collector.html** is  webpage with embedded javascript that simulates a survey submission. Enter the data collector URL in the form.
 
