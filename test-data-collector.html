@@ -1,0 +1,77 @@
+<html>
+	<head>
+	  <title>Experience Sampler Data Collection Test</title>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  <script type="text/javascript">
+	    function saveData() {
+	      var collectorScriptURL = document.getElementById("collectorScriptURL").value;
+	      studyID = "TEST123";
+	      pid = Math.floor(Math.random() * 100000000);
+	      ptime = Math.floor(Math.random() * 100000000);	
+    	      var submission = { participant_id: pid, pause_time: ptime, study_id: studyID };
+	      document.getElementById("dataString").innerHTML = JSON.stringify(submission);    
+	      $.ajax({
+                type: 'POST',
+                url: collectorScriptURL,
+                data: submission,
+	        crossDomain: true,
+                success: function (result) {
+		  console.log(result);
+		  document.getElementById("resultString").innerHTML = result; 	
+	        },
+                error: function (request, error) {console.log(error);},
+                });
+ 	    }	
+	  </script>
+	  <style>
+.divTable{
+	display: table;
+	width: 100%;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+}
+.divTableCell, .divTableHead {
+	border: 1px solid #999999;
+	display: table-cell;
+	padding: 3px 10px;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+	font-weight: bold;
+}
+.divTableFoot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+.divTableBody {
+	display: table-row-group;
+}
+	  </style>
+	</head>
+	<body>
+		<div><p style="font-size:1.5em;">This page contains a javascript that will attempt to submit randomly generated values for <span style="font-weight: bold;">participant_id</span>, <span style="font-weight: bold;">pause_time</span>, and <span style="font-weight: bold;">study_id</span> to your Experience Sampler data collector script.</p></div>	
+		<div class="divTable" style="width: 100%;border: 1px solid #000;" >
+			<div class="divTableBody">
+				<div class="divTableRow">
+					<div class="divTableCell">URL:</div>
+					<div class="divTableCell"><input type="text" size=100 id="collectorScriptURL"> <button onclick="saveData()">Test Data Collector</button></div>
+				</div>
+				<div class="divTableRow">
+					<div class="divTableCell">Data:</div>
+					<div class="divTableCell"><span id="dataString"></span></div>
+				</div>
+				<div class="divTableRow">
+					<div class="divTableCell">Result:</div>
+					<div class="divTableCell"><span id="resultString"></span></div>
+				</div>
+			</div>
+		</div>
+	</body>
+<html>
