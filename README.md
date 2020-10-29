@@ -17,3 +17,5 @@ There are two ways to build the container in OKD/Openshift:
 > oc new-app https://github.com/JaimeMagiera/experience-sampler-data-collector-s2i.git
  
 For more information on bulding and running applications in OKD/OpenShift, see the [OKD documentation](https://docs.okd.io/latest/applications/application_life_cycle_management/creating-applications-using-cli.html)
+
+There is also a bash script to test data submission.
