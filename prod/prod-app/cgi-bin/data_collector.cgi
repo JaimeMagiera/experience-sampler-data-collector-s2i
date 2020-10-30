@@ -1,8 +1,5 @@
 #!/usr/bin/perl -ws
-# This cgi script parses the submission.
-
-# Read the DATA_DIR environment variable to construct the path for data files to be written to.
-$datadir =  $ENV{'DATA_DIR'};
+# This cgi script parses Experience Sampler submissions and writes the resulting key/value pairs into a data file for each.
 
 # Get the request method.
 $request_method = $ENV{'REQUEST_METHOD'};
@@ -48,10 +45,15 @@ print "Content-type: text/html", "\n\n";
 print $response_content;
 
 # Construct the data file name.
-my $filename = "participant_${id}_data.csv";
+$filename = "participant_${id}_data.csv";
 
-# Construct the data file path.
-my $filepath = $datadir . "/" . $filename;
+# Check for the DATA_DIR environment variable. If it exists, use it to construct a full path for data files to be written to. Otherwise, the files are written to the same folder as the script.
+
+if(defined $ENV{'DATA_DIR'}) {
+        $filepath = $ENV{'DATA_DIR'} . "/" . $filename;
+} else {
+	$filepath = $filename;
+}	
 
 # Open a file handle to write the data.
 open( OUTFILE, ">>", $filepath) or die $!, "Couldn\'t open outfile for writing!\n";
