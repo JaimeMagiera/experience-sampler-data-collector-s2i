@@ -4,7 +4,7 @@
 # Modify the cgi-bin folder path to accomodate the default application root of the image.
 sed -i 's#/opt/rh/httpd24/root/var/www/cgi-bin#/opt/app-root/src/cgi-bin#g' /etc/httpd/conf/httpd.conf
 
-# Set an httpd environment variable based on the container environment variable. This is the location where the data files with be written. 
+# Check for the DATA_DIR environment variable. If it exists, set an httpd environment variable with that value. This is the path where the data files with be written to. 
 if [[ -v DATA_DIR ]]; then
 	echo "SetEnv DATA_DIR ${DATA_DIR}" >> /etc/httpd/conf/httpd.conf
 fi
