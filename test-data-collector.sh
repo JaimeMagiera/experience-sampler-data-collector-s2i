@@ -1,11 +1,14 @@
 #!/bin/sh
+# This shell script simulates a survey submission to your data collector script. Use the -u flag to provide the complete URL to the data collector script. The Study ID value is "TEST123". The "Participant ID" and "Pause Time" are randomly generated.
+
+study_id="TEST123"
 
 # Get command line options
-while getopts ":s:h" opt; do
+while getopts ":u:h" opt; do
   case $opt in
-	s) SERVER_URL="$OPTARG"
+	u) data_collector_script_url="$OPTARG"
 	;;
-	h) PRINT_HELP=true
+	h) print_help=true
 	;;
     \?) echo "Invalid option -$OPTARG" >&2
     ;;
@@ -13,8 +16,8 @@ while getopts ":s:h" opt; do
 done
 
 # Check if the -h flag was used. If so, print help
-if  [ "$PRINT_HELP" = true ]; then
-	echo "Use the -s flag to denote the target server"
+if  [ "$print_help" = true ]; then
+	echo 'This shell script simulates a survey submission to your data collector script. Use the -u flag to provide the complete URL to the data collector script. The Study ID value is "TEST123". The "Participant ID" and "Pause Time" are randomly generated.' 
 	exit 0;
 fi
 
@@ -22,9 +25,10 @@ fi
 participant_id=$RANDOM
 pause_time=$RANDOM
 
-echo "Server: " ${SERVER_URL}
+echo "URL: " ${data_collector_script_url}
+echo "Study ID: " ${study_id}
 echo "Participant ID: " ${participant_id}
 echo "Pause Time: " ${pause_time}
 
 # Post to the server
-curl -d "participant_id=${participant_id}&pause_time=${pause_time}" -X POST ${SERVER_URL}/cgi-bin/data_collector.cgi
+curl -d "participant_id=${participant_id}&study_id=${study_id}&pause_time=${pause_time}" -X POST ${data_collector_script_url}
