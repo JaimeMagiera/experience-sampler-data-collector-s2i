@@ -20,7 +20,7 @@ For more information on bulding and running applications in OKD/OpenShift, see t
 
 ## Configuring the Data Directory
 
-This s2i build includes a shell script which looks for an environment variable DATA_DIR. If that variable exists, an Apache configuration file is created which passes that value on to the httpd process. The included data_collector cgi script in turn looks for that value when constructing the file path to save data files. This provides flexibility in saving the data, and allows the script to be used in a variety of environmennts. To define the environment variable in OpenShift, add it to the Build Configuration via the console or command line.  
+This s2i build includes a shell script which looks for an environment variable DATA_DIR. If that variable exists, an Apache configuration file is created which passes that value on to the httpd process. The included data_collector cgi script in turn looks for that value when constructing the file path to save data files to. This provides flexibility in saving the data, and allows the script to be used in a variety of environments. To define the environment variable in OpenShift, add it to the Build Configuration via the console or command line.  
 
 ## Utilities ##
 This repository also contains several utilities that you can use to test your data collector.  
