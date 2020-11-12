@@ -29,5 +29,3 @@ This repository also contains several utilities that you can use to test your da
 
 [test-data-collector.html](test-data-collector.html) is webpage with embedded javascript that simulates a survey submission to your data collector script. Provide the complete URL to the data collector script in the URL textfield. The Study ID value is "TEST123". The "Participant ID" and "Pause Time" are randomly generated.
 
-Hello world!
-
